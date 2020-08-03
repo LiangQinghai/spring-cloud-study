@@ -1,0 +1,5 @@
+/.idea/
+*.iml
+/**/target/
+/**/dependency-reduced-pom.xml
+/rocksdb/src/main/resources/rocksdb/

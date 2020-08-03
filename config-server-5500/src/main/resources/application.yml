@@ -1,0 +1,25 @@
+server:
+  port: 5500
+
+spring:
+  profiles:
+    active: jdbc
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+    config:
+      profile: jdbc
+      server:
+        jdbc:
+          enabled: true
+      label: master
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/lqh?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  application:
+    name: config-server

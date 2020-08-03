@@ -1,0 +1,19 @@
+server:
+  port: 9002
+
+
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://eureka-8001.liangqinghai.cn/eureka,http://eureka-8000.liangqinghai.cn/eureka
+spring:
+  application:
+    name: user-provider-hystrix
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}

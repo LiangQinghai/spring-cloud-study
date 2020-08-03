@@ -1,0 +1,36 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: user-consumer-9011
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: 127.0.0.1
+      port: 8500
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://eureka-8001.liangqinghai.cn/eureka,http://eureka-8000.liangqinghai.cn/eureka
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: user-consumer-9010
+logging:
+  level:
+    cn.liangqinghai.study: debug
+feign:
+  client:
+    config:
+      feigName:
+        connectTimeout: 50000
+        readTimeout: 50000
+        loggerLevel: full
+  httpclient:
+    connection-timeout: 9000
+
+ribbon:
+  ConnectTimeout: 500000
+  ReadTimeout: 500000

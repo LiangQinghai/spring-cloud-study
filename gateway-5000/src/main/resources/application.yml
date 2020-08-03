@@ -1,0 +1,19 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-route
+          uri: http://127.0.0.1:9012
+#          filters:
+#            - AddRequestParameter=X-Request-Id,1024
+          predicates:
+            - Path=/api/**
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: 127.0.0.1
+      port: 8500

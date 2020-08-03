@@ -1,0 +1,14 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: eureka-server-8001
+
+eureka:
+  instance:
+    hostname: eureka-8001.liangqinghai.cn
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka-8000.liangqinghai.cn

@@ -1,0 +1,13 @@
+server:
+  port: 9001
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-8001.liangqinghai.cn/eureka,http://eureka-8000.liangqinghai.cn/eureka
+spring:
+  application:
+    name: user-provider
