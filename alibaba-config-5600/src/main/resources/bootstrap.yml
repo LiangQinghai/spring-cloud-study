@@ -1,0 +1,13 @@
+server:
+  port: 5600
+
+spring:
+  application:
+    name: alibaba-config
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml

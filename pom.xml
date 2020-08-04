@@ -20,6 +20,10 @@
         <module>user-consumer-hystrix-9012</module>
         <module>gateway-5000</module>
         <module>config-server-5500</module>
+        <module>alibaba-user-provider-9003</module>
+        <module>alibaba-user-provider-9004</module>
+        <module>alibaba-user-consumer-9013</module>
+        <module>alibaba-config-5600</module>
     </modules>
 
     <dependencies>
