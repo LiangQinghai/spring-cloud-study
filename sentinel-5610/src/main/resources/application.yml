@@ -1,0 +1,19 @@
+server:
+  port: 5610
+spring:
+  application:
+    name: sentinel-5610
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

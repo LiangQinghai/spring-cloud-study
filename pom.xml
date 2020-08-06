@@ -24,6 +24,7 @@
         <module>alibaba-user-provider-9004</module>
         <module>alibaba-user-consumer-9013</module>
         <module>alibaba-config-5600</module>
+        <module>sentinel-5610</module>
     </modules>
 
     <dependencies>
