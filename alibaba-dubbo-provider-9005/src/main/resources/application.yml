@@ -1,0 +1,20 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: dubbo-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    config:
+      allow-override: true
+dubbo:
+  scan:
+    base-packages: cn.liangqinghai.study
+  protocol:
+    port: -1
+    name: dubbo
+  registry:
+    address: spring-cloud://localhost
+debug: true

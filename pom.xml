@@ -25,6 +25,9 @@
         <module>alibaba-user-consumer-9013</module>
         <module>alibaba-config-5600</module>
         <module>sentinel-5610</module>
+        <module>alibaba-dubbo-api</module>
+        <module>alibaba-dubbo-provider-9005</module>
+        <module>alibaba-dubbo-consumer-9014</module>
     </modules>
 
     <dependencies>
