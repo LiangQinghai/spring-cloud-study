@@ -1,0 +1,47 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        # 认证中心
+        - id: project-auth
+          uri: lb://project-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            # 验证码处理
+            - ValidateCodeFilter
+            - StripPrefix=1
+        # 代码生成
+        - id: project-gen
+          uri: lb://project-gen
+          predicates:
+            - Path=/code/**
+          filters:
+            - StripPrefix=1
+        # 定时任务
+        - id: project-job
+          uri: lb://project-job
+          predicates:
+            - Path=/schedule/**
+          filters:
+            - StripPrefix=1
+        # 系统模块
+        # 系统模块
+        - id: project-system
+          uri: lb://project-system
+          predicates:
+            - Path=/system/**
+          filters:
+            - name: BlackListUrlFilter
+              args:
+                blacklistUrl:
+                  - /user/info/*
+            - StripPrefix=1

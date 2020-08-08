@@ -28,6 +28,10 @@
         <module>alibaba-dubbo-api</module>
         <module>alibaba-dubbo-provider-9005</module>
         <module>alibaba-dubbo-consumer-9014</module>
+        <module>project-common-swagger</module>
+        <module>project-common-redis</module>
+        <module>project-common-core</module>
+        <module>project-gateway</module>
     </modules>
 
     <dependencies>

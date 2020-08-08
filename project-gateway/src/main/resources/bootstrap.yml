@@ -1,0 +1,29 @@
+server:
+  port: 6000
+spring:
+  application:
+    name: project-gateway
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+    sentinel:
+      eager: true
+      transport:
+        dashboard: localhost:8899
+      datasource:
+        ds1:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            dataId: sential-project-gateway
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
