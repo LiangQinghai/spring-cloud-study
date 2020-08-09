@@ -1,0 +1,72 @@
+#请求处理的超时时间
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+# feign 配置
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: project-auth
+          uri: lb://project-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+#            - ValidateCodeFilter
+            - StripPrefix=1
+        - id: project-gen
+          uri: lb://project-gen
+          predicates:
+            - Path=/code/**
+          filters:
+            - StripPrefix=1
+        - id: project-job
+          uri: lb://project-job
+          predicates:
+            - Path=/schedule/**
+          filters:
+            - StripPrefix=1
+        - id: project-system
+          uri: lb://project-system
+          predicates:
+            - Path=/system/**
+          filters:
+#            - name: BlackListUrlFilter
+#              args:
+#                blacklistUrl:
+#                  - /user/info/*
+            - StripPrefix=1
