@@ -8,6 +8,16 @@
     <artifactId>spring-cloud-study</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <kotlin.version>1.3.72</kotlin.version>
+        <kotlin.code.style>official</kotlin.code.style>
+        <java.version>1.8</java.version>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+        <!--kotlin增量编译-->
+        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+    </properties>
+
     <modules>
         <module>eureka-server-8000</module>
         <module>eureka-server-8001</module>
@@ -32,6 +42,8 @@
         <module>project-common-redis</module>
         <module>project-common-core</module>
         <module>project-gateway</module>
+        <module>alibaba-user-consumer-kotlin-9015</module>
+        <module>project-api</module>
     </modules>
 
     <dependencies>
@@ -79,6 +91,16 @@
                 <scope>import</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
 
         </dependencies>
 

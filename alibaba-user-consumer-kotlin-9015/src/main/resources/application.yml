@@ -1,0 +1,9 @@
+server:
+  port: 9015
+spring:
+  application:
+    name: alibaba-user-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
