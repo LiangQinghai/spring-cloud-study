@@ -1,1 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.liangqinghai.study.spring.cloud.project.api.factory.RemoteLogFallbackFactory,\
+  cn.liangqinghai.study.spring.cloud.project.api.factory.RemoteUserFallbackFactory

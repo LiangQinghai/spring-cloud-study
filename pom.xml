@@ -44,6 +44,8 @@
         <module>project-gateway</module>
         <module>alibaba-user-consumer-kotlin-9015</module>
         <module>project-api</module>
+        <module>project-common-security</module>
+        <module>project-web-auth</module>
     </modules>
 
     <dependencies>

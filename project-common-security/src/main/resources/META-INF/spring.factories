@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.liangqinghai.study.spring.cloud.project.common.security.config.MethodSecurityConfig,\
+  cn.liangqinghai.study.spring.cloud.project.common.security.handler.CustomAccessDeniedHandler,\
+  cn.liangqinghai.study.spring.cloud.project.common.security.handler.GlobalExceptionHandler,\
+  cn.liangqinghai.study.spring.cloud.project.common.security.service.PermissionService,\
+  cn.liangqinghai.study.spring.cloud.project.common.security.service.RedisClientDetailsService,\
+  cn.liangqinghai.study.spring.cloud.project.common.security.service.UserDetailsServiceImpl
