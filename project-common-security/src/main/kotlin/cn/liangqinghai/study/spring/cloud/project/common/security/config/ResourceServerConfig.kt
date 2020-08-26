@@ -19,7 +19,7 @@ import java.lang.Exception
 
 @Configuration
 @EnableResourceServer
-open class ResourceServerConfig : ResourceServerConfigurerAdapter() {
+class ResourceServerConfig : ResourceServerConfigurerAdapter() {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
@@ -30,13 +30,13 @@ open class ResourceServerConfig : ResourceServerConfigurerAdapter() {
     private val oAuth2ClientProperties: OAuth2ClientProperties? = null
 
     @Bean
-    open fun authIgnoreConfig(): AuthIgnoreConfig {
+    fun authIgnoreConfig(): AuthIgnoreConfig {
         return AuthIgnoreConfig()
     }
 
     @Bean
     @LoadBalanced
-    open fun restTemplate(): RestTemplate {
+    fun restTemplate(): RestTemplate {
 
         val restTemplate = RestTemplate()
 
@@ -47,7 +47,7 @@ open class ResourceServerConfig : ResourceServerConfigurerAdapter() {
     }
 
     @Bean
-    open fun tokenService(): ResourceServerTokenServices {
+    fun tokenService(): ResourceServerTokenServices {
 
         val remoteTokenServices = RemoteTokenServices()
         val accessTokenConverter = DefaultAccessTokenConverter()

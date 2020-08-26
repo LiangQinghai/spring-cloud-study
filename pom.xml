@@ -47,6 +47,7 @@
         <module>project-common-security</module>
         <module>project-web-auth</module>
         <module>project-common-datascope</module>
+        <module>project-web-system</module>
     </modules>
 
     <dependencies>

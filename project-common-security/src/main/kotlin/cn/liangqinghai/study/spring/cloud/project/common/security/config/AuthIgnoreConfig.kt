@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 @Component
 @Configuration
 @ConfigurationProperties(prefix = "security.oauth2.ignore")
-open class AuthIgnoreConfig {
+class AuthIgnoreConfig {
 
     var urls: ArrayList<String?>? = null
 
